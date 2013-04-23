@@ -49,9 +49,24 @@ var app = {
     },
     scan: function() {
         console.log('scanning');
-        var scanner = window.PhoneGap.require("cordova/plugin/BarcodeScanner");
 
-        scanner.encode(BarcodeScanner.Encode.TEXT_TYPE, "http://www.nytimes.com", function(success) { alert("encode success: " + success); }, function(fail) { alert("encoding failed: " + fail); } );
+        try {
+            window.plugins.barcodeScanner.scan(function(args) {
+                console.log("Scanner result: \n" +
+                    "text: " + args.text + "\n" +
+                    "format: " + args.format + "\n" +
+                    "cancelled: " + args.cancelled + "\n");
+                /*
+                if (args.format == "QR_CODE") {
+                    window.plugins.childBrowser.showWebPage(args.text, { showLocationBar: false });
+                }
+                */
+                document.getElementById("info").innerHTML = args.text;
+                console.log(args);
+        });
+        } catch (ex) {
+            console.log(ex.message);
+        }
     }
 
 };
