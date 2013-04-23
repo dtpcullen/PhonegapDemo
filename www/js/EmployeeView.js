@@ -83,11 +83,9 @@ var EmployeeView = function(employee) {
         } catch (ex) {
             alert(ex.message);
         }
-    }
         
     };
     
-
     this.initialize();
 
 }
