@@ -78,8 +78,7 @@ var EmployeeView = function(employee) {
                                                            "format: " + args.format + "\n" +
                                                            "cancelled: " + args.cancelled + "\n");
                  
-                                               document.getElementById("info").innerHTML = args.text;
-                                               console.log(args);
+                                               
                                                
            });
         } catch (ex) {
