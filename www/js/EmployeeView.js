@@ -70,6 +70,7 @@ var EmployeeView = function(employee) {
     
     this.readBarcode = function(event) {
       
+        alert("Started");
         window.plugins.barcodeScanner.scan( function(result) {
                                            alert("We got a barcode\n" +
                                                  "Result: " + result.text + "\n" +
