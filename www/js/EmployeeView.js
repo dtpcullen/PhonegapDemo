@@ -73,7 +73,7 @@ var EmployeeView = function(employee) {
         alert("Started");
         try {
             window.plugins.barcodeScanner.scan(function(args) {
-                                               alert("Scanner result: \n" +
+                                               console.log("Scanner result: \n" +
                                                            "text: " + args.text + "\n" +
                                                            "format: " + args.format + "\n" +
                                                            "cancelled: " + args.cancelled + "\n");
@@ -81,7 +81,7 @@ var EmployeeView = function(employee) {
                                                
            });
         } catch (ex) {
-            alert(ex.message);
+            console.log(ex.message);
         }
         
     };
