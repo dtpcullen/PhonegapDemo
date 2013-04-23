@@ -46,7 +46,7 @@ var EmployeeView = function(employee) {
         event.preventDefault();
         console.log('changePicture');
         if (!navigator.camera) {
-            app.showAlert("Camera API not supported", "Error");
+            app.showAlert("The Camera API not supported", "Error");
             return;
         }
         var options =   {   quality: 50,
