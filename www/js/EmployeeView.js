@@ -71,15 +71,19 @@ var EmployeeView = function(employee) {
     this.readBarcode = function(event) {
         event.preventDefault();
         alert("Started");
-        window.plugins.barcodeScanner.scan( function(result) {
-                                           alert("We got a barcode\n" +
-                                                 "Result: " + result.text + "\n" +
-                                                 "Format: " + result.format + "\n" +
-                                                 "Cancelled: " + result.cancelled);
-                                           }, function(error) {
-                                           alert("Scanning failed: " + error);
-                                           }
-                                           );
+        try {
+            window.plugins.barcodeScanner.scan(function(args) {
+                                               alert("Scanner result: \n" +
+                                                           "text: " + args.text + "\n" +
+                                                           "format: " + args.format + "\n" +
+                                                           "cancelled: " + args.cancelled + "\n");
+                                             
+                                               
+           });
+        } catch (ex) {
+            alert(ex.message);
+        }
+    }
         
     };
     
