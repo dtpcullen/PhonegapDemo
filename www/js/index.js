@@ -35,6 +35,7 @@ var app = {
     // function, we must explicity call `app.receivedEvent(...);`
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        console.log(window);
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -49,7 +50,6 @@ var app = {
     },
     scan: function() {
         console.log('scanning');
-        console.log(window);
         try {
             window.plugins.barcodeScanner.scan(function(args) {
                 console.log("Scanner result: \n" +
