@@ -49,7 +49,7 @@ var app = {
     },
     scan: function() {
         console.log('scanning');
-
+        console.log(window);
         try {
             window.plugins.barcodeScanner.scan(function(args) {
                 console.log("Scanner result: \n" +
