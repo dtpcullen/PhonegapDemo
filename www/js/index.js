@@ -51,7 +51,7 @@ var app = {
     scan: function() {
         console.log('scanning');
         try {
-            window.plugins.barcodeScanner.scan(function(args) {
+            window.barcodeScanner.scan(function(args) {
                 console.log("Scanner result: \n" +
                     "text: " + args.text + "\n" +
                     "format: " + args.format + "\n" +
